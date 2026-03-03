@@ -193,23 +193,6 @@ body {
     overflow: hidden;
 }
 
-/* 8. TAGS - Pinned to bottom */
-.feature-tags {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-top: auto; /* Always stays at the bottom of the 450px card */
-}
-
-.feature-tags span {
-    background: #F3F4F6;
-    border: 1px solid #E5E7EB;
-    color: #4B5563;
-    font-weight: 600;
-    padding: 4px 12px;
-    border-radius: 8px;
-    font-size: .7rem;
-}
 
 /* 9. REMOVED ELEMENTS (Cleanup) */
 .ov, .view-link, hr { 
