@@ -122,6 +122,8 @@ body {
     overflow: hidden;
     flex: 1;
     font-family: var(--framer-font-family);
+    text-align: justify;
+    text-justify: inter-word
 }
 
 /* BUTTON — always pinned to bottom */
