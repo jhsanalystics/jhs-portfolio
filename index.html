@@ -95,7 +95,7 @@
     function buildFilters() {
         const bar = document.getElementById('filters-container');
         if (!bar) return;
-        bar.innerHTML = '<span class="fl">Filter:</span><button class="fb active" onclick="filter(\'All\', this)">All</button>';
+        bar.innerHTML = '<span class="fl">Industry:</span><button class="fb active" onclick="filter(\'All\', this)">All</button>';
 
         [...new Set(DATA.map(p => p.industry))].forEach(ind => {
             if (ind) {
