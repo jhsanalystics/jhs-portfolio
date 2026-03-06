@@ -31,7 +31,7 @@ body {
 .eyebrow { margin-bottom: 0px !important; gap: 4px; margin-top:0px; display: flex! important; justify-content:center; align-items:center;padding-bottom: 0px !important;}
 /* Specific Logo Sizing */
 .nav-logo {
-    height: 80px;    /* Reduced from 32px for a more subtle, high-end look */
+    height: 150px;    /* Reduced from 32px for a more subtle, high-end look */
     width: auto;     /* Maintains aspect ratio */
     padding: 0;      /* Ensures no internal padding is pushing space */
     margin: 0;
