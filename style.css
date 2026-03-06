@@ -62,7 +62,7 @@ body {
     gap: 24px;
     align-items: stretch;   /* all cards same height in each row */
     margin-top: -5px !important;
-    padding-top: 5px !important;
+    padding-top: 0 !important;
 }
 
 /* CARD — fixed uniform height */
