@@ -137,6 +137,21 @@ body {
 }
 .open-btn:hover { opacity: 0.85; }
 
+.main-footer {
+    width: 100%;
+    padding: 40px 0; /* Vertical breathing room at the bottom */
+    text-align: center;
+    border-top: 1px solid #eeeeee; /* Subtle line to separate from project cards */
+    margin-top: 50px;
+}
+
+.main-footer p {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 0.85rem;
+    color: #6b7280; /* Professional cool grey */
+    letter-spacing: 0.02em;
+}
+
 @keyframes fadeInUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
 @media (max-width: 960px) { .portfolio-grid { grid-template-columns: repeat(2,1fr); } }
