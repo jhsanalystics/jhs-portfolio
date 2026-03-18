@@ -121,7 +121,7 @@ body {
     display: flex;
     flex-direction: column;
     overflow: visible !important; /* CRITICAL: Allows the card to show */
-    cursor: help;
+    cursor: default;
 }
 .description {
     font-size: 0.82rem; color: var(--muted);
