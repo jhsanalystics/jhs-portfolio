@@ -130,23 +130,39 @@ body {
     position: relative;
 }
 
-.description:hover {
-    display: block;          
-    overflow-y: auto;        /* Allows scrolling if text is extremely long */
-    position: absolute;      
-    
-    /* Cover the bottom half of the card */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: calc(100% + 15px); /* Grows to cover the button area */
-    
+.description::after {
+    content: attr(data-fulltext); /* We'll pull this from the Google Sheet data */
+    position: absolute;
+    bottom: 120%; /* Floats above the text */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px; /* Fixed width for the 'Floating Card' look */
+    padding: 20px;
     background: #ffffff;
-    padding: 0 5px 10px 0;   /* Clean padding for justified text */
-    z-index: 100;            /* Sits on top of the button */
+    color: #4b5563;
+    border-radius: 12px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f3f4f6;
+    z-index: 999;
     
-    /* Disable the line-clamp to show full Google Sheet data */
-    -webkit-line-clamp: unset; 
+    /* Animation and Visibility */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none; /* Stops the blinking/flickering */
+    
+    /* Text Styling inside the popup */
+    font-size: 0.85rem;
+    line-height: 1.6;
+    text-align: justify;
+    display: block; /* Ensures no ellipsis inside the popup */
+}
+
+/* 3. Reveal on Hover */
+.description:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-10px); /* Smooth slide up */
 }
 /* BUTTON — always pinned to bottom */
 .open-btn {
