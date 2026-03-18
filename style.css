@@ -70,7 +70,7 @@ body {
     background: #ffffff;
     border-radius: 16px;
     border: 4px solid transparent;
-    overflow: hidden;
+    overflow: visible !important;
     display: flex;
     flex-direction: column;
     height: 380px;           /* fixed height — every card identical */
@@ -101,7 +101,7 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
-    overflow: hidden;
+    overflow: visible !important;
     position: relative;
 }
 .portfolio-info h3 {
@@ -128,41 +128,43 @@ body {
     text-justify: inter-word;
     transition: all 0.3s ease;
     position: relative;
+    z-index:5;
 }
-
+/* 3. The Classy Floating Popup */
 .description::after {
-    content: attr(data-fulltext); /* We'll pull this from the Google Sheet data */
+    content: attr(data-fulltext); /* Pulls from your Google Sheet */
     position: absolute;
-    bottom: 120%; /* Floats above the text */
+    bottom: 110%; /* Floats ABOVE the text area to keep the button clear */
     left: 50%;
-    transform: translateX(-50%);
-    width: 280px; /* Fixed width for the 'Floating Card' look */
+    transform: translateX(-50%) translateY(10px);
+    
+    width: 300px;
     padding: 20px;
     background: #ffffff;
-    color: #4b5563;
+    color: var(--text);
     border-radius: 12px;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    border: 1px solid #f3f4f6;
-    z-index: 999;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); /* Deep shadow for 3D effect */
+    border: 1px solid var(--border);
+    z-index: 9999;
     
-    /* Animation and Visibility */
+    /* Animation & Anti-Blink */
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none; /* Stops the blinking/flickering */
+    pointer-events: none; 
+    transition: all 0.3s ease-out;
     
-    /* Text Styling inside the popup */
+    /* Internal Text Styling */
     font-size: 0.85rem;
     line-height: 1.6;
-    text-align: justify;
-    display: block; /* Ensures no ellipsis inside the popup */
+    display: block; 
+    white-space: normal; /* Ensures text wraps naturally */
 }
 
-/* 3. Reveal on Hover */
+/* 4. Trigger ONLY on description hover */
 .description:hover::after {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-50%) translateY(-10px); /* Smooth slide up */
+    transform: translateX(-50%) translateY(0);
 }
 /* BUTTON — always pinned to bottom */
 .open-btn {
