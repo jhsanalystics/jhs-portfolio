@@ -128,7 +128,6 @@ body {
     text-justify: inter-word;
     transition: all 0.3s ease;
     position: relative;
-    cursor: help; /* Visual cue that there is more to read */
 }
 
 .description:hover {
