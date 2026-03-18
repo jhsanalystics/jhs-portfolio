@@ -128,28 +128,27 @@ body {
     text-justify: inter-word;
     transition: all 0.3s ease;
     position: relative;
-    z-index: 1;
+    cursor: help; /* Visual cue that there is more to read */
+    z-index: 5;
 }
 /* 2. The "Popup" behavior on hover */
-.portfolio-card:hover .description {
-    display: block;          /* Removes the 3-line limit */
-    overflow: visible;       /* Shows the full text from Google Sheets */
-    position: absolute;      /* FLOATS the text so the card doesn't resize */
+.description:hover {
+    display: block;          /* Removes the -webkit-line-clamp limit */
+    overflow: visible;       /* Shows full text from your Google Sheet */
+    position: absolute;      /* FLOATS above the card */
     
-    /* Positioning the popup */
-   background: #ffffff;
-    width: 100%;             /* Fits the width of the info area */
+    /* Styling the Popup */
+    background: #ffffff;
+    width: calc(100% + 20px); /* Slightly wider than the text area for padding */
+    left: -10px;             /* Centers the slightly wider box */
     padding: 15px;
     border: 1px solid var(--border);
     border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
     
-    /* Keeping the Button Visible */
-    z-index: 100;
-    /* Move it slightly UP so it doesn't cover the View Dashboard button */
-    bottom: 100%;            /* Aligns the bottom of popup to the top of the hover area */
-    left: 0;
-    margin-bottom: 5px; 
+    /* POSITIONING UPWARDS to keep the button visible */
+    bottom: 110%;            /* Forces the popup to appear ABOVE the text area */
+    z-index: 100;            /* Ensures it sits on top of all other elements */
 }
 /* BUTTON — always pinned to bottom */
 .open-btn {
