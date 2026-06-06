@@ -88,7 +88,7 @@
     function gc(ind) {
         for (const [k, v] of Object.entries(IC))
             if (ind && ind.toLowerCase().includes(k.toLowerCase())) return v;
-        return {bg: THEME}; // fallback always uses theme color
+        return {bg: THEME1}; // fallback always uses theme color
     }
 
     function buildFilters() {
